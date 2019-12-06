@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "SceneDelegate.sceneDidBecomeActive(_:):SceneDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scene.userActivity">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SceneDelegate.scene(_:willConnectTo:options:):SceneDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "watch">
+            </PersistentString>
+            <PersistentString
+               value = "session.stateRestorationActivity">
+            </PersistentString>
+            <PersistentString
+               value = "connectionOptions.userActivities.first">
+            </PersistentString>
+            <PersistentString
+               value = "scene.userActivity?.userInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SceneDelegate.sceneWillResignActive(_:):SceneDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "watch">
+            </PersistentString>
+            <PersistentString
+               value = "session.stateRestorationActivity">
+            </PersistentString>
+            <PersistentString
+               value = "scene.userActivity">
+            </PersistentString>
+            <PersistentString
+               value = "scene.userActivity?.userInfo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
