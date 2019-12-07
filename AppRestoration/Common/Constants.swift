@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     struct ViewControllerStateIdentifiers {
         static let viewControllerRestorationIdentifier = "ViewControllerRestorationIdentifier"
+        
         static let reportDetailViewController = "ReportDetailViewController"
         static let addReportViewController = "AddReportViewController"
     }

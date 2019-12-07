@@ -12,10 +12,10 @@ class RestorableBaseViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - UIUserActivityRestoring
     override func updateUserActivityState(_ activity: NSUserActivity) {
         super.updateUserActivityState(activity)
         applyUserActivityEntries(activity)
@@ -33,6 +33,28 @@ class RestorableBaseViewController: BaseViewController {
         }
     }
     
+    // MARK: - State Restoration (UIStateRestoring)
+    /// - Tag: encodeRestorableState
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        let encodedActivity = NSUserActivityEncoder(detailUserActivity)
+        coder.encode(encodedActivity, forKey: Constants.ViewControllerStateIdentifiers.viewControllerRestorationIdentifier)
+    }
+    
+    /// - Tag: decodeRestorableState
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        
+        if coder.containsValue(forKey: Constants.ViewControllerStateIdentifiers.viewControllerRestorationIdentifier) {
+            if let decodedActivity = coder.decodeObject(forKey: Constants.ViewControllerStateIdentifiers.viewControllerRestorationIdentifier) as? NSUserActivityEncoder {
+                if let activityUserInfo = decodedActivity.userActivity.userInfo {
+                    restoreItemInterface(activityUserInfo)
+                }
+            }
+        }
+    }
+    
     func applyUserActivityEntries(_ activity: NSUserActivity) {
         
     }
@@ -40,7 +62,7 @@ class RestorableBaseViewController: BaseViewController {
     func restoreItemInterface(_ activityUserInfo: [AnyHashable : Any]) {
         
     }
-
+    
 }
 
 extension RestorableBaseViewController: Restorable {

@@ -38,10 +38,10 @@ class ReportDetailViewController: RestorableBaseViewController {
         super.applyUserActivityEntries(activity)
         let itemNumber: [String: String] = [ReportDetailViewController.activityNumberKey: report!.reportNumber]
         activity.addUserInfoEntries(from: itemNumber)
-
+        
         let itemContent: [String: String] = [ReportDetailViewController.activityContentKey: report!.content]
         activity.addUserInfoEntries(from: itemContent)
-
+        
         let viewControllerRestoreIdentifier: [String: String] = [Constants.ViewControllerStateIdentifiers.viewControllerRestorationIdentifier: Constants.ViewControllerStateIdentifiers.reportDetailViewController]
         activity.addUserInfoEntries(from: viewControllerRestoreIdentifier)
     }
