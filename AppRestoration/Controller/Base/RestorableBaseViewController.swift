@@ -34,7 +34,6 @@ class RestorableBaseViewController: BaseViewController {
     }
     
     // MARK: - State Restoration (UIStateRestoring)
-    /// - Tag: encodeRestorableState
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
         
@@ -42,7 +41,6 @@ class RestorableBaseViewController: BaseViewController {
         coder.encode(encodedActivity, forKey: Constants.ViewControllerStateIdentifiers.viewControllerRestorationIdentifier)
     }
     
-    /// - Tag: decodeRestorableState
     override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
         
@@ -55,10 +53,12 @@ class RestorableBaseViewController: BaseViewController {
         }
     }
     
+    ///Override  for saving data
     func applyUserActivityEntries(_ activity: NSUserActivity) {
         
     }
     
+    ///Override  for restoring data
     func restoreItemInterface(_ activityUserInfo: [AnyHashable : Any]) {
         
     }
